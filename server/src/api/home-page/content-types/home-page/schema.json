@@ -16,6 +16,14 @@
     },
     "description": {
       "type": "text"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.info-section",
+        "blocks.hero-section",
+        "blocks.achievement-section"
+      ]
     }
   }
 }
