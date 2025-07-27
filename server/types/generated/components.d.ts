@@ -48,6 +48,16 @@ export interface ElementsCard extends Struct.ComponentSchema {
   };
 }
 
+export interface ElementsDropdown extends Struct.ComponentSchema {
+  collectionName: 'components_elements_dropdowns';
+  info: {
+    displayName: 'dropdown';
+  };
+  attributes: {
+    navItem: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
 export interface ElementsLink extends Struct.ComponentSchema {
   collectionName: 'components_elements_links';
   info: {
@@ -85,6 +95,18 @@ export interface ElementsStatItem extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutHeader extends Struct.ComponentSchema {
+  collectionName: 'components_layout_headers';
+  info: {
+    displayName: 'header';
+  };
+  attributes: {
+    logo: Schema.Attribute.Component<'elements.logo', true>;
+    navDropDown: Schema.Attribute.Component<'elements.dropdown', true>;
+    navLink: Schema.Attribute.Component<'elements.link', true>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -92,9 +114,11 @@ declare module '@strapi/strapi' {
       'blocks.hero-section': BlocksHeroSection;
       'blocks.info-section': BlocksInfoSection;
       'elements.card': ElementsCard;
+      'elements.dropdown': ElementsDropdown;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'elements.stat-item': ElementsStatItem;
+      'layout.header': LayoutHeader;
     }
   }
 }
