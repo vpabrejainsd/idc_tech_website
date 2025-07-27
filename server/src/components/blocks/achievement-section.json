@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_achievement_sections",
+  "info": {
+    "displayName": "achievement section"
+  },
+  "options": {},
+  "attributes": {
+    "achievement": {
+      "type": "component",
+      "component": "elements.stat-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

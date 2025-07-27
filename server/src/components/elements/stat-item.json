@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_elements_stat_items",
+  "info": {
+    "displayName": "stat_item"
+  },
+  "options": {},
+  "attributes": {
+    "svg": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "statTitle": {
+      "type": "string"
+    },
+    "statDescription": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_blocks_info_sections",
+  "info": {
+    "displayName": "info section"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "our_story": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": false
+    },
+    "card": {
+      "type": "component",
+      "component": "elements.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
