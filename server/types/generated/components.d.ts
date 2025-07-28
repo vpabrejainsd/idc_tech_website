@@ -64,11 +64,11 @@ export interface ElementsLink extends Struct.ComponentSchema {
     displayName: 'link';
   };
   attributes: {
+    href: Schema.Attribute.String;
     isExternal: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    linkHREF: Schema.Attribute.String;
-    linkTitle: Schema.Attribute.String;
+    text: Schema.Attribute.String;
   };
 }
 
@@ -78,8 +78,8 @@ export interface ElementsLogo extends Struct.ComponentSchema {
     displayName: 'logo';
   };
   attributes: {
-    logoImage: Schema.Attribute.Media<'images'>;
-    logoTitle: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    logoText: Schema.Attribute.String;
   };
 }
 

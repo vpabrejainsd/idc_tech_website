@@ -5,10 +5,10 @@
   },
   "options": {},
   "attributes": {
-    "linkTitle": {
+    "text": {
       "type": "string"
     },
-    "linkHREF": {
+    "href": {
       "type": "string"
     },
     "isExternal": {
