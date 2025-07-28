@@ -1,3 +1,4 @@
+import { HeroSection } from "@/components/blocks/HeroSection";
 import { getHomePage } from "@/data/loaders"
 import { notFound } from "next/navigation";
 
@@ -9,11 +10,14 @@ async function loader() {
 
 export default async function HomeRoute() {
   const data = await loader();
+  const blocks = data?.blocks || [];
   console.log(data)
+
+  const hero = blocks[0];
+  const primaryCta = hero.cta?.find((c: { href: any; }) => !!c.href);
   return(
     <div>
-    <h1>{data.title}</h1>
-    <p>{data.description}</p>
+    <HeroSection {...hero} cta={primaryCta}/>
     </div>
   )
 }
