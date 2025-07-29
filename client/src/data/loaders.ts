@@ -35,3 +35,30 @@ export async function getHomePage() {
 
   return await fetchAPI(url.href, { method: "GET" });
 }
+
+const globalQuery = qs.stringify(
+  {
+    populate: {
+      header: {
+        populate: {
+          logo: { populate: { image: { fields: ["url", "alternativeText"] } } },
+          navDropDown: { populate: { navItem: true } },
+          navLink: true,
+        },
+      },
+    },
+  },
+  { encodeValuesOnly: true }
+);
+
+/**
+ * Fetch global settings (including header) from Strapi
+ */
+export async function getGlobal() {
+  const path = "/api/global";
+  const BASE_URL = getStrapiURL();
+  const url = new URL(path, BASE_URL);
+  url.search = globalQuery;
+
+  return await fetchAPI(url.href, { method: "GET" });
+}
