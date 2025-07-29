@@ -97,6 +97,19 @@ export interface ElementsStatItem extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutBanner extends Struct.ComponentSchema {
+  collectionName: 'components_layout_banners';
+  info: {
+    displayName: 'banner';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    dropdown: Schema.Attribute.Component<'elements.dropdown', true>;
+    link: Schema.Attribute.Component<'elements.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutFooter extends Struct.ComponentSchema {
   collectionName: 'components_layout_footers';
   info: {
@@ -135,6 +148,7 @@ declare module '@strapi/strapi' {
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'elements.stat-item': ElementsStatItem;
+      'layout.banner': LayoutBanner;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
     }
