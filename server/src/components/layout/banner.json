@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_banners",
+  "info": {
+    "displayName": "banner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "elements.link",
+      "repeatable": true
+    },
+    "dropdown": {
+      "type": "component",
+      "component": "elements.dropdown",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
