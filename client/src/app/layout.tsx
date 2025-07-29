@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from '@/components/header';
+import { Banner } from '@/components/banner';
 import { getGlobal } from '@/data/loaders';
 
 const geistSans = Geist({
@@ -23,11 +24,13 @@ export default async function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const globalData = await getGlobal();
+  const banner = globalData.data.banner;
   const header = globalData.data.header;
 
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>        
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Banner banner={banner} />    
         <Header header={header} />
         {children}
       </body>
