@@ -46,19 +46,21 @@ const globalQuery = qs.stringify(
           navLink: true,
         },
       },
+      banner: {
+        populate: {
+          link: true,
+          dropdown: { populate: { navItem: true } },
+        },
+      },
     },
   },
   { encodeValuesOnly: true }
 );
 
-/**
- * Fetch global settings (including header) from Strapi
- */
 export async function getGlobal() {
   const path = "/api/global";
   const BASE_URL = getStrapiURL();
   const url = new URL(path, BASE_URL);
   url.search = globalQuery;
-
   return await fetchAPI(url.href, { method: "GET" });
 }
