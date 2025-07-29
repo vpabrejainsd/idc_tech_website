@@ -55,6 +55,7 @@ export interface ElementsDropdown extends Struct.ComponentSchema {
   };
   attributes: {
     navItem: Schema.Attribute.Component<'elements.link', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -68,6 +69,7 @@ export interface ElementsLink extends Struct.ComponentSchema {
     isExternal: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
+    logo: Schema.Attribute.Media<'images', true>;
     text: Schema.Attribute.String;
   };
 }
@@ -95,6 +97,21 @@ export interface ElementsStatItem extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutFooter extends Struct.ComponentSchema {
+  collectionName: 'components_layout_footers';
+  info: {
+    displayName: 'footer';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images', true>;
+    logo: Schema.Attribute.Component<'elements.logo', true>;
+    navItem: Schema.Attribute.Component<'elements.link', true>;
+    navSocial: Schema.Attribute.Component<'elements.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutHeader extends Struct.ComponentSchema {
   collectionName: 'components_layout_headers';
   info: {
@@ -118,6 +135,7 @@ declare module '@strapi/strapi' {
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'elements.stat-item': ElementsStatItem;
+      'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
     }
   }

@@ -15,6 +15,13 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "logo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}
