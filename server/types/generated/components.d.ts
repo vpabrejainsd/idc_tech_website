@@ -16,9 +16,9 @@ export interface BlocksHeroSection extends Struct.ComponentSchema {
     displayName: 'hero section';
   };
   attributes: {
+    carousel: Schema.Attribute.Component<'elements.carousel', false>;
     cta: Schema.Attribute.Component<'elements.link', true>;
     heading: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
     logo: Schema.Attribute.Component<'elements.logo', false>;
   };
 }
@@ -44,7 +44,17 @@ export interface ElementsCard extends Struct.ComponentSchema {
   };
   attributes: {
     cardDescription: Schema.Attribute.Text;
-    cardTitle: Schema.Attribute.String;
+    cardtitle: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsCarousel extends Struct.ComponentSchema {
+  collectionName: 'components_elements_carousels';
+  info: {
+    displayName: 'carousel';
+  };
+  attributes: {
+    image: Schema.Attribute.Component<'elements.image', true>;
   };
 }
 
@@ -55,6 +65,18 @@ export interface ElementsDropdown extends Struct.ComponentSchema {
   };
   attributes: {
     navItem: Schema.Attribute.Component<'elements.link', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsImage extends Struct.ComponentSchema {
+  collectionName: 'components_elements_images';
+  info: {
+    displayName: 'image';
+  };
+  attributes: {
+    descrition: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -144,7 +166,9 @@ declare module '@strapi/strapi' {
       'blocks.hero-section': BlocksHeroSection;
       'blocks.info-section': BlocksInfoSection;
       'elements.card': ElementsCard;
+      'elements.carousel': ElementsCarousel;
       'elements.dropdown': ElementsDropdown;
+      'elements.image': ElementsImage;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
       'elements.stat-item': ElementsStatItem;
