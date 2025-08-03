@@ -1,7 +1,7 @@
 {
   "collectionName": "components_elements_images",
   "info": {
-    "displayName": "image"
+    "displayName": "carousel_image"
   },
   "options": {},
   "attributes": {
@@ -15,7 +15,7 @@
     "title": {
       "type": "string"
     },
-    "descrition": {
+    "description": {
       "type": "text"
     }
   },

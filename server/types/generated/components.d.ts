@@ -54,7 +54,7 @@ export interface ElementsCarousel extends Struct.ComponentSchema {
     displayName: 'carousel';
   };
   attributes: {
-    image: Schema.Attribute.Component<'elements.image', true>;
+    carousel_image: Schema.Attribute.Component<'elements.image', true>;
   };
 }
 
@@ -72,10 +72,10 @@ export interface ElementsDropdown extends Struct.ComponentSchema {
 export interface ElementsImage extends Struct.ComponentSchema {
   collectionName: 'components_elements_images';
   info: {
-    displayName: 'image';
+    displayName: 'carousel_image';
   };
   attributes: {
-    descrition: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images', true>;
     title: Schema.Attribute.String;
   };
