@@ -32,7 +32,7 @@ export interface BlocksInfoSection extends Struct.ComponentSchema {
     card: Schema.Attribute.Component<'elements.card', true>;
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
-    our_story: Schema.Attribute.Component<'elements.link', false>;
+    link: Schema.Attribute.Component<'elements.link', false>;
     title: Schema.Attribute.String;
   };
 }
@@ -44,7 +44,7 @@ export interface ElementsCard extends Struct.ComponentSchema {
   };
   attributes: {
     cardDescription: Schema.Attribute.Text;
-    cardtitle: Schema.Attribute.String;
+    cardTitle: Schema.Attribute.String;
   };
 }
 

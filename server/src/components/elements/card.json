@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "cardtitle": {
+    "cardTitle": {
       "type": "string"
     },
     "cardDescription": {
